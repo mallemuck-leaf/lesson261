@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{welcome_message}}</h1>
+
+    {% for project in projects %}
+    <h5><a href="">{{project}}</a></h5>
+    {% endfor %}
+
+<!--    <img src="{% static 'img/ramonak.png' %}" alt="Ромашка">-->
+
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Добавить">
+    </form>
+</body>
+</html>

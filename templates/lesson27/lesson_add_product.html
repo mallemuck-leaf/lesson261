@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Занятие 27.3</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Задача 3</h1>
+    <p>Форма добавления продуктов с ценами.</p>
+    <div>
+        <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Добавить">
+    </form>
+    </div>
+    <div>
+        <p><a href="{% url 'list_products' %}">Список товаров</a></p>
+    </div>
+</body>
+</html>

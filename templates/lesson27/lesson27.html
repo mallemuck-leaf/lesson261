@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Занятие 27</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Задачи занятия 27</h1>
+    <div>
+        <h5>Задача 1</h5>
+        <p>Данная страница - решение задачи.</p>
+        <p>Есть заголовок первого уровня, параграф с текстом и изображение:</p>
+        <img src="{% static 'img/ramonak.png' %}" alt="Ромашка">
+        <p>Залит фоновый цвет, изменены шрифты.</p>
+    </div>
+    <div>
+        <h5>Задача 2</h5>
+        <p><a href="task2/">Страница решения</a></p>
+    </div>
+    <div>
+        <h5>Задача 3</h5>
+        <p><a href="task3/">Страница решения</a></p>
+    </div>
+</body>
+</html>

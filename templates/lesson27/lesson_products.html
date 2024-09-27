@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Занятие 27.2</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Задача 2</h1>
+    <p>Перечень товаров с ценами.</p>
+    <div>
+        {% for product in products %}
+        <p>{{product.name}} {{product.price}}р.</p>
+        {% endfor %}
+    </div>
+    <div>
+        <p><a href="{% url 'add_product' %}">Добавить товар</a></p>
+    </div>
+</body>
+</html>
