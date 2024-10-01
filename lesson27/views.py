@@ -6,7 +6,7 @@ from .forms import ProductForm
 
 
 def task_page(request):
-    return render(request, 'lesson27/lesson27.html')
+    return render(request, 'lesson27/page0.html')
 
 
 def product_page(request):
@@ -14,7 +14,7 @@ def product_page(request):
         'products': Product.objects.all(),
     }
     # [print(x) for x in Product.objects.all()]
-    return render(request, 'lesson27/lesson_products.html', content)
+    return render(request, 'lesson27/page1.html', content)
 
 
 def add_product(request):
@@ -32,5 +32,5 @@ def add_product(request):
     context = {
         'form': form,
     }
-    return render(request, 'lesson27/lesson_add_product.html', context)
+    return render(request, 'lesson27/page2.html', context)
 

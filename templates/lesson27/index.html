@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang='ru'>
+<head>
+	<meta charset='UTF-8'>
+	<link rel='stylesheet' href="{% static 'css/styles.css' %}">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<header>
+		<h1>Задачи занятия 27</h1>
+		<h3>Выполнены с использованием дочерних шаблонов.</h3>
+		<nav>
+			<ul>
+				<li><a href="{% url 'start_list' %}">Страница задач</a></li>
+				<li><a href="{% url 'list_products' %}">Страница списка товаров</a></li>
+				<li><a href="{% url 'add_product' %}">Страница добавления товара</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
+	</main>
+	<aside>
+	</aside>
+	<footer>
+		<div>
+			<p>Контактные данные</p>
+			&copy; 2024 My site of the solved problem. All right reserved.
+		</div>
+	</footer>
+</body>
+</html>
