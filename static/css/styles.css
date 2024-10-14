@@ -63,6 +63,20 @@ main div div {
     margin-bottom: 10px;
 }
 
+.task * {
+    display: inline-block;
+    margin: 0 0 0 0;
+    text-align: left;
+    text-size: 10px;
+
+}
+
+.group p {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+}
+
 footer {
 	background-color: black;
 	color: #fff;

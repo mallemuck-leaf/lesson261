@@ -1,0 +1,22 @@
+{% load static %}
+<div id="task_list">
+    {% for task in tasks %}
+<!--    <div class="tasks">-->
+        <div class="task">
+            <a href="{{task.id}}">{{task.title}}</a>
+            <div class="executor">
+                <p>Исполнитель:</p>
+                <p>{{task.executor}}</p>
+            </div>
+            <div class="status">
+                <p>Состояние:</p>
+                {{task.status}}
+            </div>
+            <div class="date_compl">
+                <p>Срок выполнения:</p>
+                {{task.completed_date}}
+            </div>
+        </div>
+<!--    </div>-->
+    {% endfor %}
+</div>

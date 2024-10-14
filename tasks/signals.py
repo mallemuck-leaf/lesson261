@@ -2,14 +2,19 @@ from django.db.models.signals import post_save, post_delete, post_init
 from django.db.models import signals
 from django.dispatch import receiver
 from .models import Task, Project
-# from django.contrib.auth import user
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 # from django.core.signals import request_started
 
 
-# def superuser_creation(app, created_models, verbosity, db,  **kwargs):     # ресивер
-#     if auth_app.User in created_models and kwargs.get('interactive', True):
-#         if auth_app.User.objects.filter(is_superuser=True).exists():
-#             print('Создание суперпользователя.')
+def superuser_creation(sender, instance, created,  **kwargs):     # ресивер
+    # user = kwargs['instance']
+    user = instance
+    if user.is_superuser:
+        print('Создание суперпользователя.')
+
+
+post_save.connect(superuser_creation, sender=User)
 #
 #
 # signals.post_syncdb.connect(superuser_creation,

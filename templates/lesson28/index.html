@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang='ru'>
+<head>
+	<meta charset='UTF-8'>
+	<link rel='stylesheet' href="{% static 'css/styles.css' %}">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<header>
+		<h1>Занятие 28</h1>
+		<h3>Приложение для управления задачами.</h3>
+		<nav>
+			<ul>
+				<li><a href="{% url 'task_all' %}">Страница задач</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
+	</main>
+	<aside>
+	</aside>
+	<footer>
+		<div>
+			{% include 'lesson27/footer_info.html' %}
+		</div>
+	</footer>
+</body>
+</html>
